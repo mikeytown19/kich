@@ -18,10 +18,11 @@ module.exports = {
     'react-hooks/rules-of-hooks': 'error',
     'react-hooks/exhaustive-deps': 'warn',
     'no-underscore-dangle': 0,
-    'no-default-export': 0,
+    'import/prefer-default-export': 'off',
     'react/prop-types': 0,
     'import/no-extraneous-dependencies': 0,
     'react/jsx-filename-extension': 0,
+    'no-unused-vars': 'off',
     'import/no-unresolved': [
       2,
       {

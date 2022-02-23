@@ -1,16 +1,6 @@
 import React from 'react'
 import { styled } from '../../theme/stitches.config'
 import { paddingVariants } from '../../theme/variants'
-const Block = ({ children, ...props }) => {
-
-  return (
-    <Wrapper {...props} className="block">
-      {children}
-    </Wrapper>
-  )
-}
-
-export default Block
 
 const Wrapper = styled('div', {
   p: '$4',
@@ -28,3 +18,15 @@ const Wrapper = styled('div', {
   }
   // border: '1px solid $red8',
 }, paddingVariants)
+
+function Block({ children, ...props }) {
+
+  return (
+    <Wrapper {...props} className="block">
+      {children}
+    </Wrapper>
+  )
+}
+
+export default Block
+

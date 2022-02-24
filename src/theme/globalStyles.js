@@ -96,6 +96,9 @@ const globalStyles = globalCss({
     paddingLeft: "0",
     marginLeft: "0",
   },
+  "ul, li, p, a ": {
+    color: "$text",
+  },
 });
 
 export default globalStyles;

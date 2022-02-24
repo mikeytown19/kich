@@ -7,28 +7,6 @@ import {
   buttonBackgroundColorsVariants,
 } from "../../theme/variants";
 
-import { ThemeContext } from "../ThemeProvider/ThemeContext";
-
-const DarkModeToggle = () => {
-  // Don't render anything at compile time. Deferring rendering until we
-  // know which theme to use on the client avoids incorrect initial
-  // state being displayed.
-  const { colorMode, setColorMode } = React.useContext(ThemeContext);
-  if (!colorMode) {
-    return null;
-  }
-
-  const nextColor = colorMode !== "dark" ? "dark" : "light";
-
-  return (
-    <input
-      type="checkbox"
-      checked={colorMode !== "dark"}
-      onChange={() => setColorMode(nextColor)}
-    />
-  );
-};
-
 const ButtonWrapper = styled(
   "button",
   {
@@ -43,7 +21,7 @@ const ButtonWrapper = styled(
     WebkitUserSelect: "none",
     MozUserSelect: "none",
     userSelect: "none",
-    color: "$slate4",
+    color: "$whiteA12",
     padding: "$2 $4",
     fontSize: "$2",
     borderRadius: "$2",
@@ -82,11 +60,10 @@ const ButtonWrapper = styled(
 );
 
 // @ts-ignore
-const Button = ({ icon, children, ...props }) => {
+function Button({ icon, children, ...props }) {
   return (
     // @ts-ignore
     <ButtonWrapper {...props}>
-      <DarkModeToggle />
       {icon && (
         // @ts-ignore
         <span>{icon}</span>
@@ -95,6 +72,6 @@ const Button = ({ icon, children, ...props }) => {
       {children}
     </ButtonWrapper>
   );
-};
+}
 
 export default Button;

@@ -1,3 +1,6 @@
+import lightTheme from "./light-theme";
+import darkTheme from "./dark-theme";
+
 import {
   gray,
   grayDark,
@@ -60,6 +63,7 @@ import {
 } from "@radix-ui/colors";
 
 export const themeColors = {
+  ...lightTheme.colors,
   ...gray,
   ...mauve,
   ...slate,
@@ -93,6 +97,7 @@ export const themeColors = {
 };
 
 export const themeDarkColors = {
+  ...darkTheme.colors,
   ...grayDark,
   ...mauveDark,
   ...slateDark,

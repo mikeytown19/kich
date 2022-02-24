@@ -1,7 +1,7 @@
 import { createStitches } from "@stitches/react";
-import deepMerge from "../utils/deepMerge";
+// import deepMerge from "../utils/deepMerge";
 import commonTheme from "./common";
-import lightTheme from "./light-theme";
+// import lightTheme from "./light-theme";
 
 import { themeDarkColors } from "./theme_colors";
 

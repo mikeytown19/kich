@@ -5,6 +5,7 @@ const globalStyles = globalCss({
     margin: "0",
     padding: "0",
     fontFamily: "inter",
+    backgroundColor: "$loContrast",
   },
   "*, *:before, *:after": {
     boxSizing: "border-box",

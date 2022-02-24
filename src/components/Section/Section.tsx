@@ -6,7 +6,6 @@ import {
   bgColorVariants,
 } from "../../theme/variants";
 
-
 const Wrapper = styled(
   "section",
   {
@@ -16,6 +15,7 @@ const Wrapper = styled(
     boxSizing: "border-box",
     display: "flex",
     marginInline: "auto",
+    bg: "$loContrast",
     "@bp3": {
       p: "$8",
     },
@@ -37,11 +37,8 @@ const Wrapper = styled(
   bgColorVariants
 );
 
-
-
 function Section({ children, ...props }) {
   return <Wrapper {...props}>{children}</Wrapper>;
-};
+}
 
 export default Section;
-

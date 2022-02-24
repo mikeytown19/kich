@@ -1,6 +1,6 @@
 {
   "name": "kich",
-  "version": "0.0.3",
+  "version": "0.0.5",
   "description": "A React / Stitches component library.",
   "repository": {
     "type": "git",
@@ -25,8 +25,8 @@
   ],
   "types": "dist/index.d.ts",
   "peerDependencies": {
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2"
+    "react": "^16.12.0 || ^17.0.2",
+    "react-dom": "^16.12.0 || ^17.0.2"
   },
   "devDependencies": {
     "@babel/core": "^7.17.5",

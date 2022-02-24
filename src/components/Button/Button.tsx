@@ -1,4 +1,3 @@
-import React from "react";
 import { styled } from "../../theme/stitches.config";
 import {
   paddingVariants,
@@ -7,7 +6,7 @@ import {
   buttonBackgroundColorsVariants,
 } from "../../theme/variants";
 
-const ButtonWrapper = styled(
+const Button = styled(
   "button",
   {
     appearance: "none",
@@ -58,20 +57,5 @@ const ButtonWrapper = styled(
   fontVariants,
   buttonBackgroundColorsVariants
 );
-
-// @ts-ignore
-function Button({ icon, children, ...props }) {
-  return (
-    // @ts-ignore
-    <ButtonWrapper {...props}>
-      {icon && (
-        // @ts-ignore
-        <span>{icon}</span>
-      )}
-
-      {children}
-    </ButtonWrapper>
-  );
-}
 
 export default Button;

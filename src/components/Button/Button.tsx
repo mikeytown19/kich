@@ -1,3 +1,4 @@
+import React from "react";
 import { styled } from "../../theme/stitches.config";
 import {
   paddingVariants,
@@ -5,6 +6,28 @@ import {
   fontVariants,
   buttonBackgroundColorsVariants,
 } from "../../theme/variants";
+
+import { ThemeContext } from "../ThemeProvider/ThemeContext";
+
+const DarkModeToggle = () => {
+  // Don't render anything at compile time. Deferring rendering until we
+  // know which theme to use on the client avoids incorrect initial
+  // state being displayed.
+  const { colorMode, setColorMode } = React.useContext(ThemeContext);
+  if (!colorMode) {
+    return null;
+  }
+
+  const nextColor = colorMode !== "dark" ? "dark" : "light";
+
+  return (
+    <input
+      type="checkbox"
+      checked={colorMode !== "dark"}
+      onChange={() => setColorMode(nextColor)}
+    />
+  );
+};
 
 const ButtonWrapper = styled(
   "button",
@@ -63,6 +86,7 @@ const Button = ({ icon, children, ...props }) => {
   return (
     // @ts-ignore
     <ButtonWrapper {...props}>
+      <DarkModeToggle />
       {icon && (
         // @ts-ignore
         <span>{icon}</span>

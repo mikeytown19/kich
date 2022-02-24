@@ -1,0 +1,27 @@
+export default {
+  colors: {
+    accents1: "$gray1",
+    accents2: "$gray2",
+    accents3: "$gray3",
+    accents4: "$gray4",
+    accents5: "$gray5",
+    accents6: "$gray6",
+    accents7: "$gray7",
+    accents8: "$gray8",
+    accents9: "$gray9",
+    text: "$gray11",
+    background: "$darkA11",
+    foreground: "$black",
+    codeLight: "$pink1",
+    code: "$pink6",
+    border: "$gray2",
+    selection: "$blue2",
+  },
+  shadows: {
+    xs: "-4px 0 4px rgb(0 0 0 / 5%);",
+    sm: "0 5px 20px -5px rgba(0, 0, 0, 0.1)",
+    md: "0 8px 30px rgba(0, 0, 0, 0.15)",
+    lg: "0 30px 60px rgba(0, 0, 0, 0.15)",
+    xl: "0 40px 80px rgba(0, 0, 0, 0.25)",
+  },
+};

@@ -1,7 +1,7 @@
 import React from "react";
 import globalStyles from "../../theme/globalStyles";
 import { darkTheme } from "../../theme/stitches.config";
-import { ThemeContext } from "./ThemeContext";
+import ThemeContext from "../ThemeContext";
 globalStyles();
 
 const ThemeProvider = ({ children, theme }) => {

@@ -1,4 +1,6 @@
+import type * as Stitches from '@stitches/react';
 import { createStitches } from "@stitches/react";
+
 // import deepMerge from "../utils/deepMerge";
 import commonTheme from "./common";
 // import lightTheme from "./light-theme";
@@ -16,6 +18,9 @@ const stitches = createStitches({
   },
 });
 
+
+console.log(stitches)
+
 export const createThemeBase = stitches.createTheme;
 export const styled = stitches.styled;
 export const css = stitches.css;
@@ -31,6 +36,10 @@ export const darkTheme = createThemeBase("dark", {
   },
 });
 
+
+export type VariantProps<T> = Stitches.VariantProps<T>;
+export type CSS = Stitches.CSS<typeof config>;
+export type StitchesTheme = typeof theme;
 // export const createTheme = ({ type, theme, className }) => {
 //   if (!type) {
 //     throw new Error("Theme type is required");

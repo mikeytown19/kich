@@ -17,7 +17,7 @@ const Wrapper = styled(
     marginInline: "auto",
     bg: "$loContrast",
     "@bp3": {
-      p: "$8",
+      p: "$",
     },
     "@bp2": {
       p: "$6",

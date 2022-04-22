@@ -1,6 +1,16 @@
 import React from "react";
-import { styled } from "../../theme/stitches.config";
+import { styled, VariantProps, CSS } from "../../theme/stitches.config";
 import { flexVariants, paddingVariants } from "../../theme/variants";
+
+import {
+  Wrap,
+  Display,
+  Justify,
+  Direction,
+  AlignItems,
+  AlignContent
+} from '../../utils/prop-types';
+
 
 const Wrapper = styled(
   "div",
@@ -8,68 +18,63 @@ const Wrapper = styled(
     display: "flex",
     flexDirection: "column",
     maxWidth: "$4",
-    // height: 'min-content',
     gap: "$4",
     "@bp2": {
       py: "$3",
       px: "$1",
-      wrap: "wrap",
+      flexWrap: "wrap",
     },
     variants: {
-      reverse: {
-        true: {
-          flexDirection: "row-reverse",
-        },
-      },
-
-      w_full: {
-        true: {
-          width: "100%",
-        },
-      },
-      fifty_fifty: {
-        true: {
-          ".block, .stack": {
-            width: "100%",
-          },
-        },
-      },
-      column: {
-        true: {
-          flexDirection: "column",
-          ".block, .stack": {
-            m: "$1",
-          },
-        },
-      },
-      row: {
-        true: {
-          flexDirection: "row",
-          ".block, .stack": {
-            m: "$1",
-          },
-        },
-      },
-    },
-    defaultVariants: {
-      // @ts-ignore
-      p: "0",
     },
   },
   flexVariants,
   paddingVariants
 );
 
-// @ts-ignore
-const Stack = ({ children, row, column, reverse, ...props }) => {
-  const fifty_fifty = children?.length ? true : false;
+
+const defaultProps = {
+  wrap: 'wrap' as Wrap,
+  as: 'div' as keyof JSX.IntrinsicElements,
+  display: 'block' as Display
+};
+
+
+interface Props {
+  wrap?: Wrap;
+  display?: Display;
+  justify?: Justify;
+  direction?: Direction;
+  alignItems?: AlignItems;
+  alignContent?: AlignContent;
+  as?: keyof JSX.IntrinsicElements;
+  css?: CSS;
+}
+
+type StackProps = Props & typeof defaultProps;
+
+
+const Stack: React.FC<StackProps> = ({
+  children,
+   display,
+   wrap,
+   justify,
+   direction,
+   alignItems,
+   alignContent,
+   css,
+   ...props }) => {
+
   return (
     <Wrapper
-      row={row}
-      reverse={reverse}
-      column={column}
+      css={{
+        alignItems,
+        alignContent,
+        flexWrap: wrap,
+        display: display,
+        justifyContent: justify,
+        flexDirection: direction,
+        ...(css as any)}}
       {...props}
-      fifty_fifty={fifty_fifty}
     >
       {children}
     </Wrapper>

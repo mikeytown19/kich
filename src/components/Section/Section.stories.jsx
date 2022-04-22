@@ -27,8 +27,6 @@ export const Basic = () => (
           brand.
         </Text>
         <Stack
-          row
-          w_full
           justify="around"
           css={{ mw: "$md", marginInline: "auto" }}
         >
@@ -45,8 +43,8 @@ export const Basic = () => (
 
 export const split = () => (
   <Section py="12" css={{ bg: "$indigo2" }}>
-    <Stack row w_full>
-      <Stack column justify="center">
+    <Stack direction="row" >
+      <Stack direction="column" justify="center">
         <Text as="h1">
           Build Fast. <br /> Deliver Faster.
         </Text>
@@ -61,7 +59,7 @@ export const split = () => (
       </Stack>
 
 
-      <Stack column justify="start">
+      <Stack justify="start" >
         <Text as="h1">
           Another Column
         </Text>

@@ -9,7 +9,7 @@ import {
 const Button = styled(
   "button",
   {
-    appearance: "none",
+    // appearance: "none",
     border: "none",
     display: "inline-block",
     fontWeight: "$5",

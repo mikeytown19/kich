@@ -4,7 +4,7 @@ const globalStyles = globalCss({
   "html,body": {
     margin: "0",
     padding: "0",
-    fontFamily: "inter",
+    fontFamily: "$sans",
     backgroundColor: "$loContrast",
   },
   "*, *:before, *:after": {

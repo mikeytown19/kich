@@ -14,8 +14,6 @@ export default {
 }
 
 
-
-
 export const Basic = () => (
   <Section py="12">
     <Stack css={{ "@bp2_min": { ta: "center" } }}>
